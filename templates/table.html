@@ -1,0 +1,165 @@
+__opapp_include(../lib/html/optinomic/page/start.m4)
+<div class="no-page-break" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between start">
+    <div flex="10">
+        <p class="md-caption">Datum</p>
+    </div>
+    <div flex="10">
+        <p class="md-caption">Zeitpunkt</p>
+    </div>
+    <div flex="5">
+        <p class="md-caption">Σ</p>
+    </div>
+    <div flex="75">
+        <div ng-if="!r.dropout.dropout" class="no-page-break" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between start">
+            <div flex>
+                <p class="md-caption">H1
+                    <md-tooltip md-direction="bottom">
+                        Überaktives, aggressives, Unruhe stiftendes oder agitiertes Verhalten
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H2
+                    <md-tooltip md-direction="bottom">
+                        Absichtliche Selbstverletzung
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H3
+                    <md-tooltip md-direction="bottom">
+                        Problematischer Alkohol- oder Drogenkonsum
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H4
+                    <md-tooltip md-direction="bottom">
+                        Kognitive Probleme
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H5
+                    <md-tooltip md-direction="bottom">
+                        Probleme in Zusammenhang mit körperlicher Erkrankung
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H6
+                    <md-tooltip md-direction="bottom">
+                        Probleme in Zusammenhang mit Halluzinationen und Wahnvorstellung
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H7
+                    <md-tooltip md-direction="bottom">
+                        Gedrückte Stimmung
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H8
+                    <md-tooltip md-direction="bottom">
+                        Andere psychische Probleme
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H9
+                    <md-tooltip md-direction="bottom">
+                        Probleme mit Beziehung
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H10
+                    <md-tooltip md-direction="bottom">
+                        Probleme mit alltäglichen Aktivitäten
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H11
+                    <md-tooltip md-direction="bottom">
+                        Probleme durch die Wohnbedingungen
+                    </md-tooltip>
+                </p>
+            </div>
+            <div flex>
+                <p class="md-caption">H12
+                    <md-tooltip md-direction="bottom">
+                        Probleme durch die Bedingungen in Beruf und Alltag
+                    </md-tooltip>
+                </p>
+            </div>
+        </div>
+        <div ng-if="r.dropout.dropout" class="no-page-break" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between start">
+            <div flex>
+                <p class="md-caption">{{r.dropout.dropout_raeson}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-repeat="r in d.honos.responses" class="grid-border-top" style="padding-top: 6px;min-height: 48px;">
+    <div class="no-page-break" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between start">
+        <div flex="10">
+            <p class="md-caption">{{r.datum | date}}</p>
+        </div>
+        <div flex="10">
+            <p class="md-caption">{{r.zeitpunkt}}</p>
+        </div>
+        <div flex="5">
+            <p class="md-caption">{{r.summe}}</p>
+        </div>
+        <div flex="75">
+            <div ng-if="!r.dropout.dropout" class="no-page-break" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between start">
+                <div flex>
+                    <p class="md-caption">{{r.H1}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H2}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H3}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H4}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption"> {{r.H5}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H6}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H7}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H8}}</p>
+                        <p ng-if="r.H8 !== 0" class="md-caption"> {{r.H8_text}} </p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H9}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H10}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H11}}</p>
+                </div>
+                <div flex>
+                    <p class="md-caption">{{r.H12}}</p>
+                </div>
+            </div>
+            <div ng-if="r.dropout.dropout" class="no-page-break" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between start">
+                <div flex>
+                    <p class="md-caption">{{r.dropout.dropout_raeson}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+__opapp_include(../lib/html/optinomic/page/end.m4)
