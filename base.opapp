@@ -17,8 +17,9 @@ company = Optinomic Gmbh
 phone = +41 (0)44 508 26 76
 website = http://www.optinomic.com/
 
-[template scores_table 6 6]
-__opapp_include(templates/table.html)
+[template HONOS 6 6]
+__opapp_include(optinomic_lib/dist/templates/ch.suedhang.apps.honos.html)
+
 
 [readme]
 __opapp_include(readme.md)
@@ -26,13 +27,9 @@ __opapp_include(readme.md)
 [dependencies]
 
 [javascript]
-__opapp_include(lib/js/optinomic/data_module/optinomic_app_api.m4)
-__opapp_include(main.js)
 
 
 [css]
-__opapp_include(lib/css/set/optinomic_material_bootstrap.m4)
-__opapp_include(style.css)
 
 [survey]
 id = HoNOS
